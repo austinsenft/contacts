@@ -18,9 +18,10 @@ def create_contact():
 
     # simple error message logic
     if not first_name or not last_name or not email: 
-        return jsonify({"message": "You must include a first name, last name and email"}, 
-                       400,
-                       )
+        return (
+            jsonify({"message": "You must include a first name, last name and email"}), 
+            400,
+                )
     
     # logic to enter data into database 
     new_contact = Contact(first_name, last_name=last_name, email=email)
@@ -33,7 +34,7 @@ def create_contact():
     return jsonify({"message": "User created"}), 201
 
 #UPDATE 
-@app.route("/update_contact/<int:user_id", methods=["PATCH"])
+@app.route("/update_contact/<int:user_id>", methods=["PATCH"])
 def update_contact(user_id): 
     contact = Contact.query.get(user_id)
 
@@ -55,7 +56,12 @@ def delete_contact(user_id):
     contact = Contact.query.get(user_id)
 
     if not contact: 
-        return jsonify({"message": "User deleted"}), 200
+        return jsonify({"message": "User not found"}), 404
+    
+    db.session.delete(contact) 
+    db.session.commit()
+
+    return jsonify({"message": "User deleted"}), 200
 
 
 if __name__ == "__main__": 
