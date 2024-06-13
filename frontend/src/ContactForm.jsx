@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 const ContactForm = ({ }) => {
     const [firstName, setFirstName] = useState("");
@@ -13,7 +13,7 @@ const ContactForm = ({ }) => {
             lastName, 
             email
         }
-        const url = "http://127.0.0.1:5000/contacts"
+        const url = "http://127.0.0.1:5000/create_contact"
         const options = {
             method: "POST", 
             headers: {

@@ -21,13 +21,13 @@ def create_contact():
         return (
             jsonify({"message": "You must include a first name, last name and email"}), 
             400,
-                )
+        )
     
     # logic to enter data into database 
-    new_contact = Contact(first_name, last_name=last_name, email=email)
+    new_contact = Contact(first_name=first_name, last_name=last_name, email=email)
     try: 
         db.session.add(new_contact)
-        db.session.comit()
+        db.session.commit()
     except Exception as e: 
         return jsonify({"message": str(e)}), 400
     
