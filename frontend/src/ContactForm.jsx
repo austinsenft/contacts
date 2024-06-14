@@ -64,7 +64,7 @@ const ContactForm = ({ existingContact = {}, updateCallback }) => {
                     onChange={(e) => setEmail(e.target.value)}>
                 </input>
             </div>
-            {/* Conditional rendering for update button vs create button */}
+            {/* Conditional rendering for update button vs create */}
             <button type="submit">{updating ? "Update" : "Create"}</button>
             
         </form>
