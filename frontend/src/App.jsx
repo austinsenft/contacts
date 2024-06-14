@@ -38,8 +38,9 @@ function App() {
     fetchContacts()
   }
 
-  return (
-    <>
+  return ( 
+    <div class=" flex flex-col 1 items-center">
+    
     <ContactList contacts={contacts} updateContact={openEditModal} updateCallback={onUpdate}/>
     <button onClick={openCreateModal}>Create New Contact</button>
     { isModalOpen && <div className="modal">
@@ -50,7 +51,8 @@ function App() {
       </div>
       }
       
-    </>
+    
+    </div>
   )
 }
 

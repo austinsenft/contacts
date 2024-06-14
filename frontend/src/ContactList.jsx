@@ -18,7 +18,8 @@ const ContactList = ({contacts, updateContact, updateCallback}) => {
     }
 
 
-    return <div>
+    return <div class="container mx-auto flex justify-center">
+        <div>
         <h2>Contacts</h2>
         <table>
             <thread>
@@ -43,7 +44,7 @@ const ContactList = ({contacts, updateContact, updateCallback}) => {
                 ))}
             </tbody>
         </table>
-
+        </div>
     </div>
 
 }
