@@ -36,38 +36,49 @@ const ContactForm = ({ existingContact = {}, updateCallback }) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <div>
-                <label htmlFor="firstName">First Name:</label>
+        <div class="w-full">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={onSubmit}>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" htmlFor="firstName">First Name:</label>
                 <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     type="text"
                     id="firstName"
+                    placeholder="First Name"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}>
                 </input>
             </div>
-            <div>
-                <label htmlFor="lastName">Last Name:</label>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" htmlFor="lastName">Last Name:</label>
                 <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     type="text"
                     id="lastName"
+                    placeholder="Last Name"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}>
                 </input>
             </div>
-            <div>
+            <div class="mb-4">
                 <label htmlFor="email">Email:</label>
                 <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     type="text"
                     id="email"
+                    placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}>
                 </input>
             </div>
+            <div class="text-center">
             {/* Conditional rendering for update button vs create */}
-            <button type="submit">{updating ? "Update" : "Create"}</button>
-            
+            <button 
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit">{updating ? "Update" : "Create"}</button>
+            </div>
         </form>
+        </div>
     );
 };
 
