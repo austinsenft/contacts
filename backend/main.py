@@ -16,13 +16,20 @@ def create_contact():
     last_name = request.json.get("lastName")
     email = request.json.get("email")
 
-    # simple error message logic
+    # simple error message logic to make sure all fields are filled out
     if not first_name or not last_name or not email: 
         return (
-            jsonify({"message": "You must include a first name, last name and email"}), 
+            jsonify({"message": "You must include a First Name, Last Name and Email"}), 
             400,
         )
     
+    # simple error message logic to make sure email has an @ in it
+    if "@" not in email: 
+        return (
+            jsonify({"message": "Please include a valid email address"}), 
+            400,
+        )
+
     # logic to enter data into database 
     new_contact = Contact(first_name=first_name, last_name=last_name, email=email)
     try: 
