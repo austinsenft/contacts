@@ -8,9 +8,9 @@ https://github.com/austinsenft/contacts/assets/36191945/949cd5c1-25f4-4e75-800b-
 
 
 # Built With
-Tailwind CSS 
-Python, Flask for backend 
-Javascript, React for frontend  
+Tailwind CSS <br>
+Python, Flask for backend <br>
+Javascript, React for frontend <br>
 
 # Features Implemented: 
 Modal / popup window for form entry <br>
