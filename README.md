@@ -12,7 +12,7 @@ Tailwind CSS <br>
 Python, Flask for backend <br>
 Javascript, React for frontend <br>
 
-# Features Implemented: 
+# Features Implemented
 Modal / popup window for form entry <br>
 Coniditonal rendering of buttons <br>
 Logic to prevent empty entries in forms as well as checking for an '@' in email address <br> 
