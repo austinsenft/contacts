@@ -39,10 +39,10 @@ function App() {
   }
 
   return ( 
-    <div class="container mx-auto px-4 border-solid border-2 border-sky-500 flex flex-col 1 items-center">
+    <div class="container mx-auto px-4 border-double border-4 border-black-500  flex flex-col 1 items-center">
     
     <ContactList contacts={contacts} updateContact={openEditModal} updateCallback={onUpdate}/>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded" onClick={openCreateModal}>Create New Contact</button>
+    <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400" onClick={openCreateModal}>Create New Contact</button>
     { isModalOpen && <div className="modal">
       <div className="modal-content">
         <span className="close" onClick={closeModal}>&times;</span>
